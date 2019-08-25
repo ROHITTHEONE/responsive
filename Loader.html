@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width = device-width, initial-scale = 1">
+	<title>Loader Icon</title>
+
+	<!-- css started -->
+	<style type="text/css">
+		#loader {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			z-index: 1;
+			width: 150px;
+			height: 150px;
+			margin: -75px 0 0 -75px;
+			border: 16px solid #666;
+			border-top: 16px solid #3498db;
+			border-radius: 50%;
+			animation: spin 1s linear infinite;
+		}
+
+		@keyframes spin {
+			0%{transform: rotate(0deg);}
+			100%{transform: rotate(360deg);}
+		}
+
+		animate-bottom{
+			position: relative;
+			animation-name: animatebottom;
+			animation-duration: 3s;
+		}
+
+		@keyframes animatebottom{
+			from{bottom: -100px; opacity: 0}
+			to{bottom: 0;opacity: 1}
+		}
+
+		#myDiv{
+			display: none;
+			text-align: center;
+		}
+
+	</style>
+
+	<!-- css ended -->
+</head>
+<body onload="myFunction()" style="margin: 0;">
+
+	<!-- loader icon div element -->
+	<div id="loader"></div>
+
+	<!-- Text appers after loading -->
+	<div style="display: none;" id="myDiv" class="animate-bottom">
+	<h2>Data!</h2>
+	<p>My Data is my Data. It's none of your data</p>
+	</div>
+
+	<!-- javascript work started -->
+	<script type="text/javascript">
+		var myVar;
+
+		function myFunction(){
+			myVar = setTimeout(showPage , 3000);
+		}
+
+		function showPage(){
+			document.getElementById("loader").style.display="none";
+			document.getElementById("myDiv").style.display = "block";
+		}
+	</script>
+	<!-- javascript ended -->
+
+
+</body>
+</html>
